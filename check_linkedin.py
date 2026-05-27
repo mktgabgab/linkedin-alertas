@@ -15,8 +15,8 @@ SEARCHES = [
         "url": "https://www.linkedin.com/jobs/search/?keywords=ejecutivo%20de%20cuentas&geoId=100994331&f_TPR=r1800&f_WT=1%2C3&f_JT=F"
     },
     {
-        "label": "Gestor de Cuentas",
-        "url": "https://www.linkedin.com/jobs/search/?keywords=gestor%20de%20cuentas&geoId=100994331&f_TPR=r1800&f_WT=1%2C3&f_JT=F"
+        "label": "Account Executive",
+        "url": "https://www.linkedin.com/jobs/search/?keywords=account%20executive&geoId=100994331&f_TPR=r1800&f_WT=1%2C3&f_JT=F"
     },
     {
         "label": "Marketing Manager",
@@ -31,22 +31,33 @@ SEARCHES = [
         "url": "https://www.linkedin.com/jobs/search/?keywords=brand%20manager&geoId=100994331&f_TPR=r1800&f_WT=1%2C3&f_JT=F"
     },
     {
-        "label": "Marketing Account Executive",
-        "url": "https://www.linkedin.com/jobs/search/?keywords=marketing%20account%20executive&geoId=100994331&f_TPR=r1800&f_WT=1%2C3&f_JT=F"
+        "label": "Traffic Manager",
+        "url": "https://www.linkedin.com/jobs/search/?keywords=traffic%20manager&geoId=100994331&f_TPR=r1800&f_WT=1%2C3&f_JT=F"
+    },
+    {
+        "label": "Director de Cuentas",
+        "url": "https://www.linkedin.com/jobs/search/?keywords=director%20de%20cuentas&geoId=100994331&f_TPR=r1800&f_WT=1%2C3&f_JT=F"
     },
     {
         "label": "Marketing Project Manager",
         "url": "https://www.linkedin.com/jobs/search/?keywords=marketing%20project%20manager&geoId=100994331&f_TPR=r1800&f_WT=1%2C3&f_JT=F"
     },
+    {
+        "label": "Marketing Account Executive",
+        "url": "https://www.linkedin.com/jobs/search/?keywords=marketing%20account%20executive&geoId=100994331&f_TPR=r1800&f_WT=1%2C3&f_JT=F"
+    },
 ]
 
-# Palabras que si aparecen en el titulo = no es para ti
+# Palabras que si aparecen en el titulo = descartar
 EXCLUDE_WORDS = [
     'comercial', 'sales representative', 'sdr', 'bdr',
     'software', 'developer', 'engineer', 'data analyst',
     'cloud', 'devops', 'it project', 'technical project',
     'salesforce', 'sap', 'erp', 'pricing', 'cos department',
     'electricidad', 'telecomunicaciones', 'seguridad',
+    'accountant', 'contable', 'room division', 'jefe de centro',
+    'postventa', 'intralogistica', 'intralogística',
+    'junior accountant', 'finance', 'legal',
 ]
 
 SEEN_FILE = "seen_jobs.json"
