@@ -1,0 +1,36 @@
+name: LinkedIn Job Alert
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+jobs:
+  check-jobs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Instalar dependencias
+      run: pip install -r requirements.txt
+
+    - name: Revisar LinkedIn
+      env:
+        EMAIL_TO: ${{ secrets.EMAIL_TO }}
+        EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+        EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+      run: python check_linkedin.py
+
+    - name: Guardar vacantes vistas
+      run: |
+        git config user.email "action@github.com"
+        git config user.name "Bot LinkedIn"
+        git add seen_jobs.json
+        git diff --staged --quiet || git commit -m "Update seen jobs"
+        git push
