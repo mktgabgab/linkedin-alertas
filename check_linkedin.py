@@ -59,16 +59,29 @@ def send_email(jobs):
     frm = os.environ['EMAIL_FROM']
     pwd = os.environ['EMAIL_PASSWORD']
     msg = MIMEMultipart('alternative')
-    msg['Subject'] = f"Nueva vacante en LinkedIn Madrid"
+    msg['Subject'] = 'Nueva vacante en LinkedIn Madrid'
     msg['From'] = frm
     msg['To'] = to
     body = "<h2 style='font-family:sans-serif'>Nuevas vacantes en LinkedIn</h2>"
     for j in jobs:
-        body += f"<div style='border:1px solid #ddd;border-radius:8px;padding:16px;margin:12px 0;font-family:sans-serif'><h3><a href='{j["url"]}'>{j["title"]}</a></h3><p>{j["company"]} | {j["search"]}</p><a href='{j["url"]}' style='background:#0077b5;color:white;padding:8px 16px;text-decoration:none;border-radius:6px;display:inline-block'>Ver vacante</a></div>"
+        url = j['url']
+        title = j['title']
+        company = j['company']
+        search = j['search']
+        body += (
+            "<div style='border:1px solid #ddd;border-radius:8px;"
+            "padding:16px;margin:12px 0;font-family:sans-serif'>"
+            "<h3><a href='" + url + "'>" + title + "</a></h3>"
+            "<p>" + company + " | " + search + "</p>"
+            "<a href='" + url + "' style='background:#0077b5;color:white;"
+            "padding:8px 16px;text-decoration:none;border-radius:6px;"
+            "display:inline-block'>Ver vacante</a></div>"
+        )
     msg.attach(MIMEText(body, 'html'))
     with smtplib.SMTP_SSL('smtp.gmail.com', 465) as s:
         s.login(frm, pwd)
         s.sendmail(frm, to, msg.as_string())
+    print(f"Email enviado: {len(jobs)} vacantes")
 
 def main():
     seen = load_seen()
@@ -78,6 +91,7 @@ def main():
             if job['id'] not in seen:
                 new_jobs.append(job)
                 seen.add(job['id'])
+    print(f"Encontradas: {len(new_jobs)} nuevas")
     if new_jobs:
         send_email(new_jobs)
     save_seen(seen)
