@@ -4,7 +4,6 @@ import json, os, smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
-# URLs exactas de LinkedIn con Madrid (geoId=100994331), full-time, presencial+hibrido
 SEARCHES = [
     {
         "label": "Account Manager Marketing",
@@ -40,15 +39,14 @@ SEARCHES = [
     },
     {
         "label": "Marketing Project Manager",
-        "url": "https://www.linkedin.com/jobs/search/?keywords=marketing%20project%20manager&geoId=100994331&f_TPR=r1800&f_WT=1%2C3&f_JT=F"
+        "url": "https://www.linkedin.com/jobs/search/?keywords=%22marketing%20project%20manager%22&geoId=100994331&f_TPR=r1800&f_WT=1%2C3&f_JT=F"
     },
     {
         "label": "Marketing Account Executive",
-        "url": "https://www.linkedin.com/jobs/search/?keywords=marketing%20account%20executive&geoId=100994331&f_TPR=r1800&f_WT=1%2C3&f_JT=F"
+        "url": "https://www.linkedin.com/jobs/search/?keywords=%22marketing%20account%20executive%22&geoId=100994331&f_TPR=r1800&f_WT=1%2C3&f_JT=F"
     },
 ]
 
-# Palabras que si aparecen en el titulo = descartar
 EXCLUDE_WORDS = [
     'comercial', 'sales representative', 'sdr', 'bdr',
     'software', 'developer', 'engineer', 'data analyst',
@@ -57,7 +55,14 @@ EXCLUDE_WORDS = [
     'electricidad', 'telecomunicaciones', 'seguridad',
     'accountant', 'contable', 'room division', 'jefe de centro',
     'postventa', 'intralogistica', 'intralogística',
-    'junior accountant', 'finance', 'legal',
+    'finance', 'legal',
+    'logistics', 'logistica', 'logística',
+    'retail', 'trainee', 'supply chain',
+    'hotel', 'hospitality', 'hosteleria', 'hostelería',
+    'inmobiliaria', 'real estate', 'construccion', 'construcción',
+    'manufactura', 'industrial', 'satellite', 'satelite',
+    'e-commerce trainee', 'program manager', 'it manager',
+    'sector tecnol', 'tecnologia de', 'tecnología de',
 ]
 
 SEEN_FILE = "seen_jobs.json"
