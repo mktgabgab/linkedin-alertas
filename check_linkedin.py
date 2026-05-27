@@ -61,7 +61,11 @@ EXCLUDE_WORDS = [
     'hotel', 'hospitality', 'hosteleria', 'hostelería',
     'inmobiliaria', 'real estate', 'construccion', 'construcción',
     'manufactura', 'industrial', 'satellite', 'satelite',
-    'e-commerce trainee', 'program manager', 'it manager',
+    'agente inmobiliario', 'agente inmo', 'agente comercial',
+    'junior project manager', 'project manager junior',
+    'e-commerce trainee', 'ecommerce trainee',
+    'consumer product', 'product growth',
+    'program manager', 'it manager',
     'sector tecnol', 'tecnologia de', 'tecnología de',
 ]
 
