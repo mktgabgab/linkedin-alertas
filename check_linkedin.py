@@ -48,25 +48,35 @@ SEARCHES = [
 ]
 
 EXCLUDE_WORDS = [
-    'comercial', 'sales representative', 'sdr', 'bdr',
-    'software', 'developer', 'engineer', 'data analyst',
-    'cloud', 'devops', 'it project', 'technical project',
-    'salesforce', 'sap', 'erp', 'pricing', 'cos department',
-    'electricidad', 'telecomunicaciones', 'seguridad',
-    'accountant', 'contable', 'room division', 'jefe de centro',
-    'postventa', 'intralogistica', 'intralogística',
-    'finance', 'legal',
-    'logistics', 'logistica', 'logística',
-    'retail', 'trainee', 'supply chain',
-    'hotel', 'hospitality', 'hosteleria', 'hostelería',
-    'inmobiliaria', 'real estate', 'construccion', 'construcción',
-    'manufactura', 'industrial', 'satellite', 'satelite',
-    'agente inmobiliario', 'agente inmo', 'agente comercial',
-    'junior project manager', 'project manager junior',
+    # Ventas / comercial
+    'comercial', 'sales representative', 'sdr', 'bdr', 'head of sales',
+    'account sales', 'graduate sales', 'sales graduate', 'presales', 'pre-sales',
+    'business development', 'gtm sales',
+    # Tecnologia
+    'software', 'developer', 'engineer', 'data analyst', 'cloud', 'devops',
+    'it project', 'technical project', 'salesforce', 'sap', 'erp', 'saas account',
+    'aws', 'managed service', 'system manager', 'systems manager',
+    'sector tecnol', 'tecnologia de', 'tecnologia de',
+    # Inmobiliaria / construccion
+    'inmobiliaria', 'real estate', 'construccion', 'construccion',
+    'agente inmobiliario', 'agente inmo', 'agente comercial', 'agente',
+    # Finanzas / admin
+    'accountant', 'contable', 'accounting', 'finance', 'legal',
+    'office manager', 'junior office', 'oficina',
+    # Logistica / industria
+    'logistics', 'logistica', 'logistica', 'supply chain',
+    'manufactura', 'industrial', 'postventa', 'intralogistica', 'intralogistica',
+    # Hosteleria
+    'hotel', 'hospitality', 'hosteleria', 'hosteleria', 'room division',
+    # Practicas / junior no mkt
+    'trainee', 'beca', 'becario', 'becaria', 'internship', 'graduate',
+    'junior office', 'jefe de centro',
+    # Otros irrelevantes
+    'pricing', 'cos department', 'electricidad', 'telecomunicaciones',
+    'seguridad', 'satellite', 'satelite', 'consultor',
+    'program manager', 'it manager', 'consumer product', 'product growth',
     'e-commerce trainee', 'ecommerce trainee',
-    'consumer product', 'product growth',
-    'program manager', 'it manager',
-    'sector tecnol', 'tecnologia de', 'tecnología de',
+    'junior project manager', 'project manager junior',
 ]
 
 SEEN_FILE = "seen_jobs.json"
